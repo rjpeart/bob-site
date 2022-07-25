@@ -1,8 +1,6 @@
-import { SanityClient } from "@sanity/client";
+import sanityClient from "@sanity/client";
 
-const sanityClient = ({
+export default sanityClient ({
     projectId: "t8mfu30c",
     dataset: "production"
 })
-
-export default sanityClient

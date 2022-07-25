@@ -1,12 +1,35 @@
+// import { type } from "@testing-library/user-event/dist/type"
+
 export default {
-  name: 'post',
-  title: 'Post',
+  name: 'project',
+  title: 'Project',
   type: 'document',
   fields: [
     {
       name: 'title',
       title: 'Title',
       type: 'string',
+    },
+    {
+      name: 'subtitle',
+      title: 'Sub Title',
+      type: 'string',
+    },
+    {
+      name: 'projectType',
+      title: 'Project type',
+      type: 'string',
+      options: {
+        list: [
+          { value: "fun", title: "Fun" },
+          { value: "money", title: "Money" },
+        ],
+      },
+    },
+    {
+      name: 'color',
+      title: 'Color',
+      type: 'colorPicker'
     },
     {
       name: 'slug',
@@ -16,12 +39,6 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-    },
-    {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'},
     },
     {
       name: 'mainImage',
@@ -36,11 +53,6 @@ export default {
       title: 'Categories',
       type: 'array',
       of: [{type: 'reference', to: {type: 'category'}}],
-    },
-    {
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
     },
     {
       name: 'body',
